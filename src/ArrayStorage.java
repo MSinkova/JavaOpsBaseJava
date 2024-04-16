@@ -8,13 +8,11 @@ public class ArrayStorage {
     Resume[] storage = new Resume[10000];
 
     void clear() {
-        Arrays.fill(storage, 0, size - 1, null);
+        Arrays.fill(storage, 0, size + 1, null);
     }
 
     void save(Resume r) {
-        storage[size] = r;
-        size++;
-        return;
+        storage[size++] = r;
     }
 
     Resume get(String uuid) {
@@ -32,6 +30,7 @@ public class ArrayStorage {
                 storage[i] = storage[size - 1];
                 storage[size - 1] = null;
                 size--;
+                break;
             }
         }
     }
@@ -40,13 +39,7 @@ public class ArrayStorage {
      * @return array, contains only Resumes in storage (without null)
      */
     Resume[] getAll() {
-        Resume[] storageWithoutNull = new Resume[size()];
-        for (int i = 0; i < storage.length; i++) {
-            if (storage[i] != null) {
-                storageWithoutNull = Arrays.copyOf(storage, size);
-            }
-            break;
-        }
+        Resume[] storageWithoutNull = Arrays.copyOfRange(storage, 0, size);
         return storageWithoutNull;
     }
 
