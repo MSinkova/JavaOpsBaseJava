@@ -8,7 +8,7 @@ public class ArrayStorage {
     Resume[] storage = new Resume[10000];
 
     void clear() {
-        Arrays.fill(storage, 0, size + 1, null);
+        Arrays.fill(storage, 0, size, null);
     }
 
     void save(Resume r) {
@@ -39,8 +39,7 @@ public class ArrayStorage {
      * @return array, contains only Resumes in storage (without null)
      */
     Resume[] getAll() {
-        Resume[] storageWithoutNull = Arrays.copyOfRange(storage, 0, size);
-        return storageWithoutNull;
+        return storage = Arrays.copyOfRange(storage, 0, size);
     }
 
     int size() {
