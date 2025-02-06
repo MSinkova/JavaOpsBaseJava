@@ -16,7 +16,7 @@ public class MainTestArrayStorage {
         r3.setUuid("uuid3");
 
         ARRAY_STORAGE.save(r1);
-        ARRAY_STORAGE.save(r2);
+        ARRAY_STORAGE.save(r1);
         ARRAY_STORAGE.save(r3);
 
         System.out.println("Get r1: " + ARRAY_STORAGE.get(r1.getUuid()));
@@ -32,7 +32,8 @@ public class MainTestArrayStorage {
         ARRAY_STORAGE.getAll();
         ARRAY_STORAGE.clear();
         printAll();
-        ARRAY_STORAGE.update(r3);
+        r1.setUuid("uuid5");
+        ARRAY_STORAGE.update(r1);
 
         System.out.println("Size: " + ARRAY_STORAGE.size());
         printAll();
