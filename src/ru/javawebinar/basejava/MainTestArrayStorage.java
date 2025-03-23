@@ -3,6 +3,8 @@ package ru.javawebinar.basejava;
 import ru.javawebinar.basejava.model.Resume;
 import ru.javawebinar.basejava.storage.ArrayStorage;
 
+import java.util.Arrays;
+
 /**
  * Test for your com.urise.webapp.storage.ArrayStorage implementation
  */
@@ -25,6 +27,7 @@ public class MainTestArrayStorage {
         System.out.println("Size: " + ARRAY_STORAGE.size());
 
         System.out.println("Get dummy: " + ARRAY_STORAGE.get("dummy"));
+//        System.out.println("Index of r3: " + Arrays.binarySearch(ARRAY_STORAGE.storage, 0, ARRAY_STORAGE.size(), r3));
 
         printAll();
         ARRAY_STORAGE.getAll();
