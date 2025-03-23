@@ -1,13 +1,13 @@
-package com.urise.webapp.storage;
+package ru.javawebinar.basejava.storage;
 
-import com.urise.webapp.model.Resume;
+import ru.javawebinar.basejava.model.Resume;
 
 import java.util.Arrays;
 
 /**
  * Array based storage for Resumes
  */
-public class ArrayStorage {
+public class ArrayStorage implements Storage {
     private int size;
     private int STORAGE_LIMIT = 1000;
     private Resume[] storage = new Resume[STORAGE_LIMIT];
@@ -72,7 +72,7 @@ public class ArrayStorage {
         return size;
     }
 
-    public int findIndex(String uuid) {
+    private int findIndex(String uuid) {
         for (int index = 0; index < storage.length; index++) {
             if (storage[index] == null) {
                 return -1;

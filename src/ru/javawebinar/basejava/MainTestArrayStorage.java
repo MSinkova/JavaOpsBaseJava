@@ -1,5 +1,7 @@
-import com.urise.webapp.model.Resume;
-import com.urise.webapp.storage.ArrayStorage;
+package ru.javawebinar.basejava;
+
+import ru.javawebinar.basejava.model.Resume;
+import ru.javawebinar.basejava.storage.ArrayStorage;
 
 /**
  * Test for your com.urise.webapp.storage.ArrayStorage implementation
@@ -16,7 +18,7 @@ public class MainTestArrayStorage {
         r3.setUuid("uuid3");
 
         ARRAY_STORAGE.save(r1);
-        ARRAY_STORAGE.save(r1);
+        ARRAY_STORAGE.save(r2);
         ARRAY_STORAGE.save(r3);
 
         System.out.println("Get r1: " + ARRAY_STORAGE.get(r1.getUuid()));
